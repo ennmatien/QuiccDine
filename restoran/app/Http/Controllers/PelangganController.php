@@ -86,11 +86,8 @@ class PelangganController extends Controller
     public function booking()
     {
         $transaction = Vendor::all();
-        $review = DB::table('vendors')
-                        ->join('reviews','vendors.id','reviews.vendor_id')
-                        ->select('reviews.review','vendors.id')
-                        ->get();
-        return view('backend.user.booking',compact('transaction','review'));
+        
+        return view('backend.user.booking',compact('transaction'));
     }
 
     public function transaction()

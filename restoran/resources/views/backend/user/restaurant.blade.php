@@ -117,7 +117,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="user d-flex flex-row align-items-center"> <i class="bi bi-person-circle fa-2x" style="margin-right:1rem"></i>
                         <span><small class="font-weight-bold text-primary">{{$value->name_user}}</small> </br>
-                        <small class="font-weight-bold">{{$value->review}}</small></span> </div> <small>2 days ago</small>
+                        <small class="font-weight-bold">{{$value->review}}</small></span> </div> <small>{{$value ->created_at }}</small>
                     </div>
                     <div class="action d-flex justify-content-between mt-2 align-items-center">
                         <div class="reply px-4"> </div>

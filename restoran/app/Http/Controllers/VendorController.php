@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vendor;
+use App\Models\User;
 use App\Models\Bill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,7 +70,7 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {
-        $nama_file="noimg";
+        $nama_file="noimg.jpg";
         if ($request->file('images')){
             $file = $request->file('images');
             $nama_file= time().str_replace(" ","",$file->getClientOriginalName());
@@ -88,13 +89,17 @@ class VendorController extends Controller
                 'descr'=> $request->descr,
                 'image'=> $nama_file
             ]);
+        $user = User::find($request->user_id);
+        $user->update([
+                'name' => $request->user_name
+            ]);
 
             
             
 
         Alert::success('Berhasil', 'Berhasil');
 
-        return redirect('/home');
+        return redirect()->back();
 
     }
 

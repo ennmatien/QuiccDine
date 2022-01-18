@@ -19,6 +19,10 @@
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }} ">
 
             <div class="form-group">
+                <label for="nama">Nama Vendor<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="nama" name="user_name" value="{{ Auth::user()->name }}" required>
+            </div>
+            <div class="form-group">
                 <label for="nama">Nama Restoran<span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="nama" name="name" value="{{ isset($vendor) ? $vendor->name : old('name') }}" required>
             </div>
