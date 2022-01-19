@@ -55,11 +55,12 @@
                 <input type="file" class="form-control" id="nama" name="images">
             </div>
             @if (isset($vendor))
-            <div class="container float-left" style="height:250px; width:250px;">
+            <div class="container float-left" style="height:250px; width:250px; margin-bottom:1rem;"> 
             <img src="{{ URL::asset('images/'.$vendor->image)}}"   class="card-img-top" alt="gambar">
+            </div>
             @endif
-
-            <div class="form-group" style="margin-top:2rem;">
+            
+            <div class="form-group" style=" width:250px;">
                 <button type="reset" class="btn btn-sm btn-outline-secondary">Reset</button>
                 
                 <button type="submit" class="btn btn-sm btn-success">Simpan</button>
@@ -71,7 +72,7 @@
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="btn btn-sm btn-danger float-left">Delete Account?</button>
             </form>
-            </div>
+        </div>
     </div>
 </div>
 
